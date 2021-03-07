@@ -24,6 +24,9 @@ public class OrElse {
 		  .orElseGet(() -> defaultValue());
 
 		System.out.println(format("value: %s", value));
+
+		ofNullable(nullable)
+		  .orElseThrow(() -> new RuntimeException("null value"));
 	}
 
 	static String defaultValue() {
